@@ -1,0 +1,117 @@
+{
+  "scopeName": "text.mini-html",
+  "patterns": [
+    {
+      "include": "#tags"
+    },
+    {
+      "include": "#entities"
+    }
+  ],
+  "repository": {
+    "tags": {
+      "patterns": [
+        {
+          "name": "meta.mini-html.tag.open",
+          "begin": "(<)(html|head|body|title|div|span)(?=[\s>]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.tag.mini-html"
+            },
+            "2": {
+              "name": "entity.name.tag.mini-html"
+            }
+          },
+          "end": "(/?>)",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.tag.mini-html"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#attributes"
+            }
+          ]
+        },
+        {
+          "name": "meta.mini-html.tag.close",
+          "begin": "(</)(html|head|body|title|div|span)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.tag.mini-html"
+            },
+            "2": {
+              "name": "entity.name.tag.mini-html"
+            }
+          },
+          "end": "(>)",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.tag.mini-html"
+            }
+          }
+        },
+        {
+          "name": "meta.mini-html.tag.self-closing",
+          "begin": "(<)(meta)(?=[\s>]|$)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.definition.tag.mini-html"
+            },
+            "2": {
+              "name": "entity.name.tag.mini-html"
+            }
+          },
+          "end": "(/>)",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.tag.mini-html"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#attributes"
+            }
+          ]
+        }
+      ]
+    },
+    "attributes": {
+      "patterns": [
+        {
+          "name": "entity.other.attribute-name.mini-html",
+          "match": "\\b[a-zA-Z-]+(?=\\s*=)"
+        },
+        {
+          "name": "string.quoted.mini-html",
+          "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.mini-html"
+            }
+          },
+          "end": "\"",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.mini-html"
+            }
+          }
+        }
+      ]
+    },
+    "entities": {
+      "patterns": [
+        {
+          "name": "constant.character.entity.mini-html",
+          "match": "&[a-zA-Z]+;",
+          "captures": {
+            "0": {
+              "name": "punctuation.definition.constant.mini-html"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

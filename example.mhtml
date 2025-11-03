@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Sample Mini HTML Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div>
+      <span>Welcome to Mini HTML</span>
+      <span>This is a sample document that follows Mini HTML rules.</span>
+      <div>
+        <span>This is a nested span element</span>
+        <span>Another span element</span>
+      </div>
+    </div>
+    <div>
+      <span>Simple content here</span>
+    </div>
+  </body>
+</html>

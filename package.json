@@ -1,0 +1,60 @@
+{
+  "name": "mini-html",
+  "displayName": "Mini HTML",
+  "description": "Language Server for simplified HTML documents",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.100.1"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:mini-html"
+  ],
+  "main": "./client/dist/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "mini-html",
+        "aliases": [
+          "Mini HTML",
+          "mini-html"
+        ],
+        "extensions": [
+          ".mhtml"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "mini-html",
+        "scopeName": "text.mini-html",
+        "path": "./syntaxes/mini-html.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "tsc -p tsconfig.client.json",
+    "build:server": "tsc -p tsconfig.server.json",
+    "watch": "npm run build:client && npm run build:server -- --watch",
+    "watch:client": "tsc -p tsconfig.client.json --watch",
+    "watch:server": "tsc -p tsconfig.server.json --watch"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/vscode": "^1.105.0",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  },
+  "packageManager": "yarn@4.9.4+sha512.7b1cb0b62abba6a537b3a2ce00811a843bea02bcf53138581a6ae5b1bf563f734872bd47de49ce32a9ca9dcaff995aa789577ffb16811da7c603dcf69e73750b"
+}

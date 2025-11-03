@@ -1,0 +1,15 @@
+{
+  "name": "mini-html-client",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "compile": "tsc -p ../tsconfig.client.json"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.105.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  }
+}
